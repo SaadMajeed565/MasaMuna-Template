@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxury Fashion & Electronics Store</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: { primary: '#111111', dark: '#111827' },
+          boxShadow: { soft: '0 10px 40px rgba(0,0,0,0.06)' }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-white pt-28 font-sans text-gray-900">
+
+<!-- TOP ANNOUNCEMENT BAR -->
+<div class="fixed top-0 left-0 w-full bg-black text-white text-center text-xs py-2 z-[60]">
+  🚚 Free delivery worldwide on orders above $100 | Limited time luxury sale
+</div>
+
+<!-- HEADER -->
+<header class="fixed top-12 left-0 w-full z-50">
+  <div class="w-[90%] mx-auto">
+    <div class="flex items-center justify-between gap-6 bg-white/90 backdrop-blur-xl border border-gray-200 shadow-lg rounded-full px-6 py-4">
+
+      <div class="flex items-center">
+        <img src="https://masamuna.com/wp-content/uploads/2024/03/cropped-www001logo.png" class="h-12 lg:h-14 w-auto object-contain">
+      </div>
+
+      <nav class="hidden lg:flex items-center gap-3 text-[15px] font-medium">
+        <a href="#" class="px-4 py-2 rounded-full hover:bg-gray-100 transition">Women</a>
+        <a href="#" class="px-4 py-2 rounded-full hover:bg-gray-100 transition">Men</a>
+        <a href="#" class="px-4 py-2 rounded-full hover:bg-gray-100 transition">Children</a>
+        <a href="#" class="px-4 py-2 rounded-full hover:bg-gray-100 transition">Electronics</a>
+        <a href="#" class="px-4 py-2 rounded-full bg-black text-white">Deals 🔥</a>
+      </nav>
+
+      <div class="hidden md:flex items-center bg-gray-100 px-4 py-2 rounded-full w-[240px]">
+        <i class="fa-solid fa-magnifying-glass text-gray-400 mr-2"></i>
+        <input placeholder="Search products..." class="bg-transparent outline-none text-sm w-full">
+      </div>
+
+      <div class="flex items-center gap-4 text-lg">
+        <button class="hidden md:block hover:text-primary"><i class="fa-regular fa-user"></i></button>
+        <button class="hidden md:block hover:text-primary"><i class="fa-regular fa-heart"></i></button>
+
+        <button onclick="toggleCart()" class="relative text-xl">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span id="cartCount" class="absolute -top-2 -right-2 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="w-[90%] mx-auto pt-10 pb-24">
+  <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+    <div>
+      <h2 class="text-5xl md:text-7xl font-black leading-[1.05] tracking-[-3px]">
+        Luxury collections for your
+        <span class="text-primary">modern lifestyle.</span>
+      </h2>
+
+      <p class="text-gray-500 text-[15px] leading-8 mt-8">
+        Discover premium fashion, accessories and electronics.
+      </p>
+
+      <div class="flex gap-4 mt-10">
+        <button class="px-8 py-4 rounded-full bg-primary text-white font-semibold">Shop Now</button>
+      </div>
+
+      <!-- STATS -->
+      <div class="grid grid-cols-3 gap-4 mt-10 text-center">
+        <div>
+          <p class="text-2xl font-bold">10K+</p>
+          <p class="text-xs text-gray-500">Products</p>
+        </div>
+        <div>
+          <p class="text-2xl font-bold">50K+</p>
+          <p class="text-xs text-gray-500">Customers</p>
+        </div>
+        <div>
+          <p class="text-2xl font-bold">99%</p>
+          <p class="text-xs text-gray-500">Satisfaction</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="grid grid-cols-2 gap-5">
+      <img class="h-[400px] object-cover rounded-3xl" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b">
+      <img class="h-[400px] object-cover rounded-3xl" src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+    </div>
+
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="w-[90%] mx-auto pb-24">
+  <h3 class="text-4xl font-black mb-8">Shop by Category</h3>
+  <div class="grid md:grid-cols-4 gap-6">
+    <div class="p-6 bg-gray-50 rounded-2xl text-center hover:shadow-soft transition">
+      <i class="fa-solid fa-shirt text-2xl mb-3"></i>
+      <p class="font-semibold">Fashion</p>
+    </div>
+    <div class="p-6 bg-gray-50 rounded-2xl text-center hover:shadow-soft transition">
+      <i class="fa-solid fa-mobile-screen text-2xl mb-3"></i>
+      <p class="font-semibold">Electronics</p>
+    </div>
+    <div class="p-6 bg-gray-50 rounded-2xl text-center hover:shadow-soft transition">
+      <i class="fa-solid fa-gem text-2xl mb-3"></i>
+      <p class="font-semibold">Luxury</p>
+    </div>
+    <div class="p-6 bg-gray-50 rounded-2xl text-center hover:shadow-soft transition">
+      <i class="fa-solid fa-headphones text-2xl mb-3"></i>
+      <p class="font-semibold">Accessories</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="w-[90%] mx-auto pb-24">
+  <h3 class="text-4xl font-black mb-10">Featured Products</h3>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="bg-white rounded-2xl shadow-soft overflow-hidden">
+      <img class="h-64 w-full object-cover" src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246">
+      <div class="p-5">
+        <h4 class="font-bold">Winter Jacket</h4>
+        <p class="text-gray-500">$49</p>
+        <div class="mt-3 flex items-center justify-between">
+          <button onclick="addToCart(1)" class="px-5 py-2 rounded-full bg-primary text-white text-sm font-semibold">Buy Now</button>
+          <button class="w-10 h-10 flex items-center justify-center rounded-full border"><i class="fa-regular fa-heart"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-soft overflow-hidden">
+      <img class="h-64 w-full object-cover" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
+      <div class="p-5">
+        <h4 class="font-bold">Black Hoodie</h4>
+        <p class="text-gray-500">$35</p>
+        <div class="mt-3 flex items-center justify-between">
+          <button onclick="addToCart(2)" class="px-5 py-2 rounded-full bg-primary text-white text-sm font-semibold">Buy Now</button>
+          <button class="w-10 h-10 flex items-center justify-center rounded-full border"><i class="fa-regular fa-heart"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-soft overflow-hidden">
+      <img class="h-64 w-full object-cover" src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
+      <div class="p-5">
+        <h4 class="font-bold">Smartphone</h4>
+        <p class="text-gray-500">$899</p>
+        <div class="mt-3 flex items-center justify-between">
+          <button onclick="addToCart(3)" class="px-5 py-2 rounded-full bg-primary text-white text-sm font-semibold">Buy Now</button>
+          <button class="w-10 h-10 flex items-center justify-center rounded-full border"><i class="fa-regular fa-heart"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-soft overflow-hidden">
+      <img class="h-64 w-full object-cover" src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+      <div class="p-5">
+        <h4 class="font-bold">Fashion Set</h4>
+        <p class="text-gray-500">$79</p>
+        <div class="mt-3 flex items-center justify-between">
+          <button onclick="addToCart(4)" class="px-5 py-2 rounded-full bg-primary text-white text-sm font-semibold">Buy Now</button>
+          <button class="w-10 h-10 flex items-center justify-center rounded-full border"><i class="fa-regular fa-heart"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="w-[90%] mx-auto pb-24">
+  <h3 class="text-4xl font-black mb-10">Why Shop With Us</h3>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="p-6 bg-white shadow-soft rounded-2xl">
+      <i class="fa-solid fa-truck-fast text-2xl mb-3"></i>
+      <p class="font-semibold">Fast Delivery</p>
+      <p class="text-sm text-gray-500">Quick worldwide shipping</p>
+    </div>
+    <div class="p-6 bg-white shadow-soft rounded-2xl">
+      <i class="fa-solid fa-shield text-2xl mb-3"></i>
+      <p class="font-semibold">Secure Payments</p>
+      <p class="text-sm text-gray-500">100% safe checkout</p>
+    </div>
+    <div class="p-6 bg-white shadow-soft rounded-2xl">
+      <i class="fa-solid fa-headset text-2xl mb-3"></i>
+      <p class="font-semibold">24/7 Support</p>
+      <p class="text-sm text-gray-500">We help anytime</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#050505] text-white px-10 py-16">
+  <div class="grid md:grid-cols-4 gap-10">
+    <div>
+      <img src="https://masamuna.com/wp-content/uploads/2024/03/cropped-www001logo.png" class="h-14 mb-4">
+      <p class="text-white/60 text-sm">Luxury store for fashion and electronics.</p>
+    </div>
+
+    <div>
+      <h4 class="font-bold mb-4">Links</h4>
+      <ul class="space-y-2 text-white/60 text-sm">
+        <li>Home</li>
+        <li>Shop</li>
+        <li>About</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-bold mb-4">Categories</h4>
+      <ul class="space-y-2 text-white/60 text-sm">
+        <li>Women</li>
+        <li>Men</li>
+        <li>Electronics</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-bold mb-4">Newsletter</h4>
+      <input class="w-full p-2 rounded text-black" placeholder="Email">
+      <button class="mt-3 w-full bg-white text-black py-2 rounded">Subscribe</button>
+    </div>
+  </div>
+
+  <div class="text-center text-white/40 text-sm mt-10">
+    © 2026 Luxury Store. All rights reserved.
+  </div>
+</footer>
+
+<!-- CART -->
+<div id="cart" class="fixed top-0 right-0 w-96 h-full bg-white shadow-2xl translate-x-full transition duration-300 z-[9999]">
+  <div class="p-5 border-b flex justify-between">
+    <h2 class="font-bold">Cart</h2>
+    <button onclick="toggleCart()">✕</button>
+  </div>
+  <div id="cartItems" class="p-5 space-y-4 h-[70%] overflow-y-auto"></div>
+  <div class="p-5 border-t">
+    <div class="flex justify-between font-bold">
+      <span>Total</span>
+      <span id="total">$0</span>
+    </div>
+    <button class="w-full mt-4 bg-primary text-white py-3 rounded-xl">Checkout</button>
+  </div>
+</div>
+
+<script>
+const products = [
+  {id:1,name:"Winter Jacket",price:49},
+  {id:2,name:"Black Hoodie",price:35},
+  {id:3,name:"Smartphone",price:899},
+  {id:4,name:"Fashion Set",price:79},
+];
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(id){
+  let item = cart.find(i=>i.id===id);
+  if(item) item.qty++;
+  else {
+    let p = products.find(p=>p.id===id);
+    cart.push({...p,qty:1});
+  }
+  save();
+}
+
+function removeItem(id){
+  cart = cart.filter(i=>i.id!==id);
+  save();
+}
+
+function save(){
+  localStorage.setItem("cart",JSON.stringify(cart));
+  renderCart();
+}
+
+function renderCart(){
+  let el=document.getElementById("cartItems");
+  let total=0,count=0;
+  el.innerHTML="";
+
+  cart.forEach(i=>{
+    total+=i.price*i.qty;
+    count+=i.qty;
+
+    el.innerHTML+=`<div class="flex justify-between border-b pb-2">
+      <div>
+        <p class="font-semibold">${i.name}</p>
+        <p class="text-sm text-gray-500">$${i.price} x ${i.qty}</p>
+      </div>
+      <button onclick="removeItem(${i.id})">❌</button>
+    </div>`;
+  });
+
+  document.getElementById("total").innerText="$"+total;
+  document.getElementById("cartCount").innerText=count;
+}
+
+function toggleCart(){
+  document.getElementById("cart").classList.toggle("translate-x-full");
+}
+
+renderCart();
+</script>
+
+</body>
+</html>
